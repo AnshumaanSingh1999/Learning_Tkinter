@@ -1,4 +1,5 @@
 from Backend_Ops import add
+from adder import adder
 from tkinter import *
 root = Tk()
 
@@ -21,21 +22,21 @@ txt2.grid(column =1, row =1)
 
 
 
-def add1():
-	n1=num1.get()
-	n2=num2.get()
-	s=int(n1)+int(n2)
-	res.config(text=s)
+def indexfunc():
+	print("button pressed")
+	x=num1.get()
+	y=num2.get()
+	print("values accessed")
+	print(x+y)
+	r=adder(x,y)
+	res.config(text=r)
 
 	
 
-# button widget with red color text inside
-btn = Button(root, text = "Add" ,
-			fg = "red", command=add1)
-# Set Button Grid
+btn = Button(root, text = "Add" , fg = "red", command=indexfunc)
 btn.grid(column=1, row=2)
 
 res=Label(root)
 res.grid(column=1,row=4)
-# Execute Tkinter
+
 root.mainloop()
