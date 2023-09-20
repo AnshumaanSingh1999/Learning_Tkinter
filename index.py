@@ -1,6 +1,11 @@
 from Backend_Ops import add
 from adder import adder
 from tkinter import *
+from tkinter import messagebox
+
+num1=""
+num2=""
+
 root = Tk()
 
 root.title("Learning Tkinter")
@@ -23,13 +28,21 @@ txt2.grid(column =1, row =1)
 
 
 def indexfunc():
-	print("button pressed")
-	x=num1.get()
-	y=num2.get()
-	print("values accessed")
-	print(x+y)
-	r=adder(x,y)
-	res.config(text=r)
+	if num1.get()!="" and num2.get()!="":
+		print("button pressed")
+		x=num1.get()
+		y=num2.get()
+		print("values accessed")
+		print(x+y)
+		r=adder(x,y)
+		res.config(text=r)
+	elif num1.get()=="" or num2.get()=="":
+		errormsg()
+
+def errormsg():
+	messagebox.showerror('Python Error', 'Error: Please select the file first!')
+
+	
 
 	
 
